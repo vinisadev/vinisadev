@@ -8,4 +8,13 @@ I have over 2 decades of experience writing various types of software, from web 
 
 ## My Current Tech Stack
 
-My current tech stack includes NextJS, NuxtJS, Go and the king of databases, Postgres.
+My current tech stack includes:
+- [ ] NextJS
+- [ ] NuxtJS
+- [ ] Go
+- [ ] Postgres
+
+## Currently Trying
+
+The tech I'm currently trying includes:
+- [ ] SvelteKit

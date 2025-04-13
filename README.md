@@ -10,7 +10,6 @@ I have over 2 decades of experience writing various types of software, from web 
 
 My current tech stack includes:
 - [ ] NextJS
-- [ ] NuxtJS
 - [ ] Go
 - [ ] Postgres
 

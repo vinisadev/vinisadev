@@ -10,5 +10,6 @@ I enjoy learning new technologies, and building outside of my comfort zone which
 
 My current tech stack includes:
 - [ ] NextJS
+- [ ] TypeScript
 - [ ] Go
 - [ ] Postgres

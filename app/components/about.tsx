@@ -53,7 +53,7 @@ export default function About() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 15,
       },
@@ -66,10 +66,9 @@ export default function About() {
       opacity: 1,
       x: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 20,
-        duration: 0.7,
       },
     },
   };
@@ -80,7 +79,7 @@ export default function About() {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 260,
         damping: 20,
         delay: 0.8 + i * 0.1,
@@ -90,7 +89,7 @@ export default function About() {
       scale: 1.2,
       y: -5,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
         damping: 10,
       },
@@ -148,7 +147,7 @@ export default function About() {
           animate={{
             opacity: 1,
             y: 0,
-            tranistion: {
+            transition: {
               delay: 0.5,
               duration: 0.7,
               ease: "easeOut",

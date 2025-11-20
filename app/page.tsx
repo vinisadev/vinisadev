@@ -5,7 +5,7 @@ import Projects from "./components/projects";
 
 export default function Home() {
   return (
-    <div className="max-w-3xl mx-auto p-10">
+    <div className="md:max-w-3xl max-w-xl mx-auto md:p-10 py-10 px-5">
       <div className="circle-gradient mt-10" />
       <About />
       <Experience />

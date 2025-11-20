@@ -11,6 +11,7 @@ export default function Projects() {
       <div className="space-y-3 flex gap-5 flex-col mt-5">
         <ProjectCard
           title="Whistle"
+          projectUrl="https://whistle.domain76.com"
           description="Service monitoring and incident response tool"
           imageUrl="/screenshots/whistle.png"
           buttonLink="https://whistle.domain76.com"
@@ -18,6 +19,7 @@ export default function Projects() {
         />
         <ProjectCard
           title="Twilio Tools"
+          projectUrl="https://twilio.domain76.com"
           description="Twilio API tools for developers"
           imageUrl="/screenshots/twilio-tools.png"
           buttonLink="https://twilio.domain76.com"

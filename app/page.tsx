@@ -1,6 +1,7 @@
 import About from "./components/about";
 import Contact from "./components/contact";
 import Experience from "./components/experience";
+import Projects from "./components/projects";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <div className="circle-gradient mt-10" />
       <About />
       <Experience />
+      <Projects />
       <Contact />
     </div>
   );

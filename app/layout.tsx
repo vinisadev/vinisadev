@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Sen } from "next/font/google";
+import { Play } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./components/theme-provider";
 
-const sen = Sen({
+const sen = Play({
   variable: "--font-sen",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +24,14 @@ export default function RootLayout({
       <body
         className={`${sen.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

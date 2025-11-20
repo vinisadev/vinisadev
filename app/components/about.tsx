@@ -1,14 +1,15 @@
 "use client";
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { MdVerified } from "react-icons/md";
 import { FaTwitter, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
+import { Download } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
 
 export default function About() {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if viewport is mobile on component mount and window resize
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -23,27 +24,27 @@ export default function About() {
     // Clean up
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
+  
   const socialLinks = [
     {
       name: "Twitter",
-      url: "https://x.com/VinIsADev",
-      icon: <FaTwitter className="text-white text-lg" />,
+      url: "https://x.com/vinisadev",
+      icon: <FaTwitter className="text-white text-lg" />
     },
     {
       name: "GitHub",
       url: "https://github.com/vinisadev",
-      icon: <FaGithub className="text-white text-lg" />,
+      icon: <FaGithub className="text-white text-lg" />
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/vincenzo-fehring",
-      icon: <FaLinkedin className="text-white text-lg" />,
+      url: "https://www.linkedin.com/in/vincenzo-fehring",
+      icon: <FaLinkedin className="text-white text-lg" />
     },
     {
       name: "YouTube",
-      url: "https://youtube.com/@vinisadev",
-      icon: <FaYoutube className="text-white text-lg" />,
+      url: "https://www.youtube.com/@vinisadev",
+      icon: <FaYoutube className="text-white text-lg" />
     },
   ];
 
@@ -81,6 +82,7 @@ export default function About() {
         type: "spring" as const,
         stiffness: 100,
         damping: 20,
+        duration: 0.7,
       },
     },
   };
@@ -143,19 +145,17 @@ export default function About() {
             <MdVerified className="text-blue-500 text-xl" />
           </motion.div>
         </div>
-
-        <motion.p className="text-sm text-gray-400" variants={itemVariants}>
-          React • Linux • Go • Building{" "}
+        {/* <motion.p className="text-sm text-gray-400" variants={itemVariants}>
+          React • Linux • Golang • building{" "}
           <Link
             href="https://x.com/vinisadev"
             className="text-blue-400 hover:underline"
           >
             @VinIsADev
           </Link>
-        </motion.p>
-
+        </motion.p> */}
         <motion.p
-          className="text-lg text-gray-300 leading-relaxed"
+          className="text-sm text-muted-foreground"
           variants={itemVariants}
           initial={{ opacity: 0, y: 20 }}
           animate={{
@@ -164,21 +164,47 @@ export default function About() {
             transition: {
               delay: 0.5,
               duration: 0.7,
-              ease: "easeOut",
-            }
+              ease: "easeOut" as const,
+            },
           }}
         >
           Softare Engineer at <Link className="text-blue-400" href="https://cleartalk.ai">ClearTalk.ai</Link>.
           Skilled in React, Go, and Linux Systems. I believe in creating solutions that are fast, reliable,
           and built to make a difference. When I feel like sharing my knowledge I write{" "}
-          <Link className="text-blue-400" href={""}>
+          {/* <Link className="text-blue-400" href={""}>
             @blogs
-          </Link>
+          </Link> */}
         </motion.p>
+        <p className="text-muted-foreground text-sm">
+          In my free time, you can find me playing{" "}
+          <a href="https://dungeonsanddragons.com" className="text-blue-400">Dungeons & Dragons</a>{" "}
+          , cooking, watching movies or trying something new either in tech or in life.
+        </p>
+        <p className="text-muted-foreground text-sm">
+          If you love reading blogs, then I write{" "}
+          <a href="" className="text-blue-400">
+            @blogs
+          </a>{" "}
+          sometimes related to development or the fun things I try.
+        </p>
       </motion.div>
-
+      <div className="mt-5 flex gap-3">
+        <div className="text-xs bg-card px-4 py-2 border flex rounded-md cursor-pointer items-center gap-2">
+          <span className="relative flex size-3">
+            {" "}
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>{" "}
+            <span className="relative inline-flex size-3 rounded-full bg-red-500"></span>
+          </span>
+          Not currently available for new opportunities
+        </div>
+        <div className="text-xs bg-card px-4 py-2 border flex rounded-md cursor-pointer items-center gap-2">
+          <Download size={15} />
+          Download Resume
+        </div>
+      </div>
+      <Separator />
       <motion.div
-        className="flex flex-wrapgap-3 pt-2 mt-5"
+        className="flex flex-wrap gap-3 pt-2 mt-5"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -188,12 +214,10 @@ export default function About() {
             key={social.name}
             custom={index}
             variants={socialIconVariants}
-            whileHover="hover"
-            whileTap="tap"
           >
             <Link
               href={social.url}
-              className="bg-gray-900 p-2.5 rounded-md hover:bg-gray-800 transition-colors inline-block"
+              className="p-2.5 rounded-md transition-colors inline-block bg-card"
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.name}
@@ -204,5 +228,5 @@ export default function About() {
         ))}
       </motion.div>
     </motion.div>
-  );
+  )
 }
